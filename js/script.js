@@ -2,7 +2,19 @@ const app = {
 
   init: function() {
     // A toi de jouer
-    console.log('à moi de jouer');
+    app.interfaceCreation();
+  },
+
+  interfaceCreation: function() {
+
+    // Je récupère le container
+    const container = document.querySelector('.container');
+    // Je commence par creer un formulaire qui contient un select
+    const form = document.createElement('form');
+    const select = document.createElement('select');
+    const languages = app.data.languages;
+    const teachers = app.data.teachers;
+    
   },
 
 };
