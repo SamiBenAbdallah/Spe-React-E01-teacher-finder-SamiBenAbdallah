@@ -70,7 +70,18 @@ const app = {
       select.appendChild(option);
 
     });
-    
+
+    // J'ajoute un event sur le select pour récupérer la valeur sélectionnée
+    select.addEventListener('change', handleSelectChange);
+
+    function handleSelectChange() {
+      selectedLangague = select.value;
+      let filteredTeachers = teachers.filter(function (teacher) {
+        return teacher.language === selectedLangague;
+      })
+      console.log(filteredTeachers.length);
+    }
+
     form.appendChild(select);
     container.appendChild(form);
     
