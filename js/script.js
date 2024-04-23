@@ -56,6 +56,23 @@ const app = {
     const languages = app.data.languages;
     const teachers = app.data.teachers;
     let selectedLangague;
+
+    // Je crée une option par language pour mon select
+    languages.forEach(function (value) {
+      // Pour chaque valeur, je crée une option
+      const option = document.createElement('option');
+      // Je lui donne une valeur
+      option.value = value;
+      // Je lui donne un texte
+      option.textContent = value;
+
+      // Je l'ajoute au select
+      select.appendChild(option);
+
+    });
+    
+    form.appendChild(select);
+    container.appendChild(form);
     
   },
 
