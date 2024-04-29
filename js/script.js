@@ -79,7 +79,17 @@ const app = {
       let filteredTeachers = teachers.filter(function (teacher) {
         return teacher.language === selectedLangague;
       })
-      console.log(filteredTeachers.length);
+      console.log(filteredTeachers);
+
+      // Je crée un paragraphe pour afficher le nombre de profs
+      const p = document.createElement('p');
+      p.textContent = `${filteredTeachers.length} profs trouvés`;
+      // Si le paragraphe existe déjà, je le supprime
+      if (container.querySelector('p')) {
+        container.removeChild(container.querySelector('p'));
+      }
+      container.appendChild(p);
+
     }
 
     form.appendChild(select);
