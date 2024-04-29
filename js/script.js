@@ -90,6 +90,21 @@ const app = {
       }
       container.appendChild(p);
 
+      // Je crée une liste pour afficher les profs
+      const ul = document.createElement('ul');
+      // Je boucle sur chaque prof
+      filteredTeachers.forEach(function (teacher) {
+        const li = document.createElement('li');
+        li.textContent = teacher.name + ' - ' + teacher.language;
+        ul.appendChild(li);
+      });
+      // Je supprime la liste si elle existe déjà
+      if (container.querySelector('ul')) {
+        container.removeChild(container.querySelector('ul'));
+      }
+      // J'ajoute la liste au container
+      container.appendChild(ul);
+
     }
 
     form.appendChild(select);
